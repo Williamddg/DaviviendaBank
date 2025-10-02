@@ -17,7 +17,7 @@
         android:focusable="true"
         android:padding="8dp"
         android:text="← Volver"
-        android:textColor="@color/black"
+        android:textColor="@color/fullnegro"
         android:textSize="16sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -79,7 +79,7 @@
         app:layout_constraintHorizontal_bias="0.187"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.64" />
+        app:layout_constraintVertical_bias="0.61" />
 
     <EditText
         android:id="@+id/txtpasswordNueva"
@@ -93,20 +93,45 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.697" />
+        app:layout_constraintVertical_bias="0.66" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirmar nueva clave:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtpasswordNueva"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <EditText
+        android:id="@+id/txtpasswordNueva2"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="************"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnConfirmarNewPassword"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:backgroundTint="@color/red3"
+        android:backgroundTint="@color/rojo3"
         android:text="Confirmar"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.847" />
+        app:layout_constraintTop_toBottomOf="@+id/txtpasswordNueva2"
+        app:layout_constraintVertical_bias="0.2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:text="← Volver"
-        android:textColor="@color/white"
+        android:textColor="@color/blanco"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Historial de Transacciones"
-        android:textColor="@color/white"
+        android:textColor="@color/blanco"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"

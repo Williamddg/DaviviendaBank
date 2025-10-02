@@ -130,4 +130,19 @@ object BankData {
     fun getTransactionHistory(userId: String): List<Transaction>? {
         return transactionHistory[userId]
     }
+
+    fun changePassword(userId: String, oldPass: String, newPass: String): Pair<Boolean, String> {
+        val userData = users[userId]
+        if (userData == null) {
+            return Pair(false, "Usuario no encontrado.")
+        }
+        if (userData[0] != oldPass) {
+            return Pair(false, "La contraseña antigua es incorrecta.")
+        }
+        // Update the password
+        userData[0] = newPass
+        // Add a transaction for security logging
+        addTransaction(userId, "seguridad", 0.0, "Cambio de contraseña exitoso.")
+        return Pair(true, "Contraseña actualizada exitosamente.")
+    }
 }

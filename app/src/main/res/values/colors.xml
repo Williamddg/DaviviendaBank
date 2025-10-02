@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="red">#D9303E</color>
-    <color name="red2">#D91122</color>
-    <color name="red3">#C82E4B</color>
-
+    <color name="blanco">#FFFFFF</color>
+    <color name="fullnegro">#000000</color>
+    <color name="grishint1">#AA333333</color>
+    <color name="grishint2">#88333333</color>
+    <color name="rojo">#FF0000</color>
+    <color name="rojo2">#D72F3D</color>
+    <color name="rojo3">#D9303E</color>
+    <color name="spinnerBackground">#eceded</color>
 </resources>

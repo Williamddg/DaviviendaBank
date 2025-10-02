@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">DaviviendaBank</string>
+    <string-array name="cities_array">
+        <item>Bogotá</item>
+        <item>Medellín</item>
+        <item>Cali</item>
+        <item>Barranquilla</item>
+        <item>Cartagena</item>
+        <item>Cúcuta</item>
+        <item>Bucaramanga</item>
+        <item>Pereira</item>
+        <item>Santa Marta</item>
+        <item>Ibagué</item>
+        <item>Pasto</item>
+        <item>Manizales</item>
+        <item>Neiva</item>
+        <item>Villavicencio</item>
+    </string-array>
 </resources>

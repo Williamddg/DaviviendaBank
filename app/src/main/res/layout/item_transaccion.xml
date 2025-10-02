@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="16dp"
-    android:background="#20000000"
+    android:background="@color/grishint2"
     android:layout_marginBottom="8dp">
 
     <TextView
@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textColor="@color/white"
+        android:textColor="@color/blanco"
         android:textSize="16sp"/>
 
     <TextView
@@ -29,7 +29,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textColor="@color/white"
+        android:textColor="@color/blanco"
         android:textSize="14sp"
         android:gravity="end"/>
 
