@@ -59,15 +59,17 @@ class Registrar : AppCompatActivity() {
     }
 
     private fun setupCitySpinner() {
-        // Crear un ArrayAdapter usando el string array y nuestro layout personalizado
-        ArrayAdapter.createFromResource(
+        // Crear un array con el hint como primer elemento
+        val citiesWithHint = mutableListOf("Ciudad")
+        citiesWithHint.addAll(resources.getStringArray(R.array.cities_array))
+        
+        ArrayAdapter(
             this,
-            R.array.cities_array, // El ID de nuestro arreglo de ciudades en strings.xml
-            R.layout.spinner_item // Usamos nuestro layout personalizado
+            R.layout.spinner_item, // Layout para el elemento seleccionado
+            citiesWithHint
         ).also { adapter ->
-            // Especificar el layout a usar cuando la lista de opciones aparece
-            adapter.setDropDownViewResource(R.layout.spinner_item) // Usamos nuestro layout también para el dropdown
-            // Aplicar el adapter al spinner
+            // Layout para el dropdown
+            adapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
             spinnerCity.adapter = adapter
         }
     }
@@ -101,7 +103,7 @@ class Registrar : AppCompatActivity() {
         val phone = txtPhone.text.toString().trim()
         val city = spinnerCity.selectedItem.toString() // Obtener el item seleccionado del Spinner
 
-        if (id.isEmpty() || pass.isEmpty() || pass2.isEmpty() || name.isEmpty() || email.isEmpty() || phone.isEmpty() || city.isEmpty()) {
+        if (id.isEmpty() || pass.isEmpty() || pass2.isEmpty() || name.isEmpty() || email.isEmpty() || phone.isEmpty() || city.isEmpty() || city == "Ciudad") {
             alertaCamposVacios()
             return
         }

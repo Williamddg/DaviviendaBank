@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="blanco">#FFFFFF</color>
+    <color name="negro">#FF000000</color>
     <color name="fullnegro">#000000</color>
     <color name="grishint1">#AA333333</color>
     <color name="grishint2">#88333333</color>

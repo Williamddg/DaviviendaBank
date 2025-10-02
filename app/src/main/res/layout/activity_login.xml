@@ -91,7 +91,7 @@
         android:ems="10"
         android:hint="******"
         android:textColorHint="@color/grishint1"
-        android:inputType="textPassword"
+        android:inputType="numberPassword"
         android:textColor="@color/fullnegro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

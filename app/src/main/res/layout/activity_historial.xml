@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/register_screen">
+    android:background="@drawable/register_screen"
+    android:paddingTop="30dp">   <!-- 👈 Espacio superior -->
 
     <TextView
         android:id="@+id/txtBackHistorial"
@@ -18,17 +19,17 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="center"
         android:text="Historial de Transacciones"
         android:textColor="@color/blanco"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_margin="16dp"/>
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTransacciones"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="16dp"/>
+        android:layout_height="577dp"
+        android:layout_margin="16dp" />
 
 </LinearLayout>
