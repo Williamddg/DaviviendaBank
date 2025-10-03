@@ -3,13 +3,15 @@
 
     <item>
         <shape android:shape="rectangle">
-
-            <!-- Fondo sólido blanco -->
-            <solid android:color="#4E8C9F"/>
+            <gradient
+                android:startColor="#4E8C9F"
+                android:centerColor="#519caf"
+                android:endColor="#56b3c4"
+                android:angle="0"/>
 
             <!-- Bordes redondeados -->
             <corners android:radius="12dp"/>
-
         </shape>
     </item>
+
 </selector>
