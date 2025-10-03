@@ -18,6 +18,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Ayuda_servicio"
+            android:exported="false" />
+        <activity
+            android:name=".Ajustes_seguridad"
+            android:exported="false" />
+        <activity
+            android:name=".Davipuntos"
+            android:exported="false" />
+        <activity
+            android:name=".Datos"
+            android:exported="false" />
+        <activity
             android:name=".Cuenta"
             android:exported="false" />
         <activity

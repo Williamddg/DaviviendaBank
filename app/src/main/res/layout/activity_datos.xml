@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Datos"
+    android:background="@drawable/login_screen">
+
+    <TextView
+        android:id="@+id/txtBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="8dp"
+        android:text="← Volver"
+        android:textColor="@color/fullnegro"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.167" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="325dp"
+        android:layout_height="315dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="42dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBack"
+        app:srcCompat="@drawable/fondo_blanco" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="324dp"
+        android:layout_height="265dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="42dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBack"
+        app:srcCompat="@drawable/fondo_gris" />
+
+    <TextView
+        android:id="@+id/txtUser3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="USUARIO"
+        android:textAlignment="center"
+        android:textColor="@color/negro"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/txtBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Celular"
+        android:textAlignment="textStart"
+        android:textColor="@color/negro"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/txtCelular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        android:text="311"
+        android:textAlignment="textStart"
+        android:textColor="@color/grismedio"
+        app:layout_constraintStart_toStartOf="@+id/textView31"
+        app:layout_constraintTop_toBottomOf="@+id/textView31" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Celular"
+        android:textAlignment="textStart"
+        android:textColor="@color/negro"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/txtCelular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        android:text="311"
+        android:textAlignment="textStart"
+        android:textColor="@color/grismedio"
+        app:layout_constraintStart_toStartOf="@+id/textView31"
+        app:layout_constraintTop_toBottomOf="@+id/textView31" />
+
+    <!-- ===== Correo ===== -->
+    <TextView
+        android:id="@+id/textViewCorreoLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Correo"
+        android:textColor="@color/negro"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView31"
+        app:layout_constraintTop_toBottomOf="@+id/txtCelular" />
+
+    <TextView
+        android:id="@+id/txtCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="usuario@mail.com"
+        android:textColor="@color/grismedio"
+        app:layout_constraintStart_toStartOf="@+id/textViewCorreoLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCorreoLabel" />
+
+    <!-- ===== Identificación ===== -->
+    <TextView
+        android:id="@+id/textViewIdLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Identificación"
+        android:textColor="@color/negro"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textViewCorreoLabel"
+        app:layout_constraintTop_toBottomOf="@+id/txtCorreo" />
+
+    <TextView
+        android:id="@+id/txtIdentificacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="123456789"
+        android:textColor="@color/grismedio"
+        app:layout_constraintStart_toStartOf="@+id/textViewIdLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textViewIdLabel" />
+
+    <!-- ===== Ciudad de Residencia ===== -->
+    <TextView
+        android:id="@+id/textViewCiudadLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Ciudad de residencia"
+        android:textColor="@color/negro"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textViewIdLabel"
+        app:layout_constraintTop_toBottomOf="@+id/txtIdentificacion" />
+
+    <TextView
+        android:id="@+id/txtCiudad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Bogotá"
+        android:textColor="@color/grismedio"
+        app:layout_constraintStart_toStartOf="@+id/textViewCiudadLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCiudadLabel" />
+
+    <Button
+        android:id="@+id/btnActualizar"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/rojo3"
+        android:text="Actualizar datos"
+        android:textColor="@color/blanco"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
