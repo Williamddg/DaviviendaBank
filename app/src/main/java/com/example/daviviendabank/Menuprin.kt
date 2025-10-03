@@ -45,7 +45,7 @@ class Menuprin : AppCompatActivity() {
             val username = sharedPreferences.getString("username", null)
 
             if (username != null) {
-                val intent = Intent(this, Cuenta::class.java)
+                val intent = Intent(this, Perfil::class.java)
                 intent.putExtra("user", username) // Pasamos el usuario al Perfil
                 startActivity(intent)
             } else {
