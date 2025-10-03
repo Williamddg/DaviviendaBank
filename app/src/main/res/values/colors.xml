@@ -2,6 +2,7 @@
 <resources>
     <color name="blanco">#FFFFFF</color>
     <color name="negro">#FF000000</color>
+    <color name="vinotinto">#6e1111</color>
     <color name="fullnegro">#000000</color>
     <color name="grishint1">#AA333333</color>
     <color name="grishint2">#88333333</color>

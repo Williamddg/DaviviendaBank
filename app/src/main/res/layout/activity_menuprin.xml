@@ -2,134 +2,685 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Menuprin"
-    android:background="@drawable/login_screen">
+    android:background="@drawable/register_screen"
+    tools:context=".Menuprin">
 
-    <TextView
-        android:id="@+id/txtBackMenuprin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:padding="8dp"
-        android:text="← Volver"
-        android:textColor="@color/fullnegro"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.167" />
-
-
-    <Button
-        android:id="@+id/btnDepositar"
-        android:layout_width="240dp"
-        android:layout_height="52dp"
-        android:backgroundTint="@color/rojo3"
-        android:textColor="@color/blanco"
-        android:text="Depositar Dinero"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.842" />
-
+    <!-- Zona fija arriba -->
     <Button
         android:id="@+id/btnProfile"
-        android:layout_width="240dp"
-        android:layout_height="52dp"
-        android:backgroundTint="@color/rojo3"
+        android:layout_width="79dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="44dp"
+        android:backgroundTint="@color/vinotinto"
+        android:text="Perfil"
         android:textColor="@color/blanco"
-        android:text="Mi Davivienda"
+        android:textSize="10dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.466" />
-
-    <Button
-        android:id="@+id/btnRetiros"
-        android:layout_width="240dp"
-        android:layout_height="52dp"
-        android:backgroundTint="@color/rojo3"
-        android:textColor="@color/blanco"
-        android:text="Retiros"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.559" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/txtUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/negro"
-        android:text="Bienvenido al menú principal de Davivienda."
+        android:text="Hola, Usuario"
+        android:textColor="@color/blanco"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.254" />
+        android:layout_marginStart="45dp"
+        app:layout_constraintStart_toEndOf="@+id/btnProfile"
+        app:layout_constraintTop_toTopOf="@+id/btnProfile"
+        app:layout_constraintBottom_toBottomOf="@+id/btnProfile" />
 
-    <Button
-        android:id="@+id/btnConsultas"
-        android:layout_width="240dp"
-        android:layout_height="52dp"
-        android:backgroundTint="@color/rojo3"
-        android:textColor="@color/blanco"
-        android:text="Consultas"
-        android:textStyle="bold"
+    <!-- Scroll general -->
+    <ScrollView
+        android:id="@+id/scrollContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="50dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/btnProfile"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.751" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/negro"
-        android:text="Selecciona la opcion que deseas realizar"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.349" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btnTransfer"
-        android:layout_width="240dp"
-        android:layout_height="52dp"
-        android:backgroundTint="@color/rojo3"
-        android:textColor="@color/blanco"
-        android:text="Transferencias"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.653" />
+            <!-- Novedades -->
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:text="Novedades"
+                android:textColor="@color/negro"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScroll"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="12dp"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView5">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <!-- Card 1 -->
+                    <FrameLayout
+                        android:layout_width="350dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/fondo_blanco">
+
+                        <!-- Contenido vertical -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Hemos renovado nuestra\nimagen"
+                                android:textColor="@color/negro"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rediseñamos la zona pública de nuestra web.\nIngrese a www.davivienda.com y explorela \ncon la confianza de siempre"
+                                android:textSize="14sp"
+                                android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+
+                        <!-- Etiqueta Nuevo -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nuevo"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp"
+                            android:padding="4dp"
+                            android:background="#0056FF"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="8dp"
+                            android:textStyle="bold"/>
+                    </FrameLayout>
+
+                    <!-- Card 2 -->
+                    <FrameLayout
+                        android:layout_width="350dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/fondo_blanco">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="¿Doja Cat llega a Bogotá?"
+                                android:textColor="@color/negro"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Con sus Tarjetas Davivienda compre las\nboletas antes que nadie. Del 06/10 a las\n10:00am al 08/10 a las 9:59am adquiera sus\nentradas en tuboleta.com. Aplica TyC"
+                                android:textSize="14sp"
+                                android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Destacado"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp"
+                            android:padding="4dp"
+                            android:background="#6600A1"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="8dp"
+                            android:textStyle="bold"/>
+                    </FrameLayout>
+
+                    <!-- Card 3 -->
+                    <FrameLayout
+                        android:layout_width="350dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/fondo_blanco">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="¿Ahorre para el mundial!"
+                                android:textColor="@color/negro"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Hagalo realidad abriendo su cuenta de\nahorros en dolaresen el banco Davivienda\n(Panama) S.A. Ingrese ya a Solicitar\n producto/Cuenta de Ahorros internacional."
+                                android:textSize="14sp"
+                                android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+                    </FrameLayout>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+            <!-- Mis productos -->
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:text="Mis productos"
+                android:textColor="@color/negro"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/horizontalScroll" />
+
+            <!-- Tarjeta roja de saldo -->
+            <ImageView
+                android:id="@+id/imageButton"
+                android:layout_width="359dp"
+                android:layout_height="117dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/fondo_degradado2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView6" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:text="Mis Cuentas"
+                android:textColor="@color/blanco"
+                app:layout_constraintStart_toStartOf="@id/imageButton"
+                app:layout_constraintTop_toTopOf="@id/imageButton" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="9dp"
+                android:text="Saldo disponible"
+                android:textColor="@color/blanco"
+                app:layout_constraintStart_toStartOf="@id/imageButton"
+                app:layout_constraintTop_toBottomOf="@id/textView24" />
+
+            <TextView
+                android:id="@+id/txtSaldo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:text="Saldo"
+                android:textColor="@color/blanco"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/imageButton"
+                app:layout_constraintTop_toBottomOf="@id/textView25" />
+
+            <!-- Servicios destacados -->
+            <TextView
+                android:id="@+id/txtServiciosDestacados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:text="Servicios destacados"
+                android:textColor="@color/negro"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/imageButton"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/imgServiciosDestacados"
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/fondo_blanco"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/txtServiciosDestacados"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:rowCount="2"
+                    android:columnCount="4"
+                    android:padding="8dp">
+
+                    <!-- Celda 1 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/ic_launcher_foreground"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Opción 1"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <!-- Celda 2 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/ic_launcher_foreground"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Opción 2"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <!-- Celda 3 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/ic_launcher_foreground"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Opción 3"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <!-- Celda 4 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/ic_launcher_foreground"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Opción 4"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <!-- Celda 5 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/ic_launcher_foreground"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Opción 5"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <!-- Celda 6 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/ic_launcher_foreground"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Opción 6"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <!-- Celda 7 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/ic_launcher_foreground"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Opción 7"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <!-- Celda 8 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/ic_launcher_foreground"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Opción 8"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                </GridLayout>
+            </LinearLayout>
+
+
+            <!-- Le puede interesar -->
+            <TextView
+                android:id="@+id/txtInteres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:text="Le puede interesar"
+                android:textColor="@color/negro"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/imgServiciosDestacados"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Scroll de productos -->
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollProductos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@id/txtInteres"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <!-- Card de interés -->
+                    <LinearLayout
+                        android:layout_width="300dp"
+                        android:layout_height="135dp"
+                        android:layout_marginEnd="12dp"
+                        android:orientation="horizontal"
+                        android:background="@drawable/fondo_azul1">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_launcher_background"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Título"
+                                android:textStyle="bold"
+                                android:textSize="16sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Descripción breve"
+                                android:textSize="14sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="300dp"
+                        android:layout_height="135dp"
+                        android:layout_marginEnd="12dp"
+                        android:orientation="horizontal"
+                        android:background="@drawable/fondo_azul2">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_launcher_background"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Título"
+                                android:textStyle="bold"
+                                android:textSize="16sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Descripción breve"
+                                android:textSize="14sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Mis finanzas -->
+            <TextView
+                android:id="@+id/txtFinanzas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:text="Mis finanzas"
+                android:textColor="@color/negro"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/horizontalScrollProductos"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/imgFinanzas"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/fondo_blanco"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/txtFinanzas"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Resumen Finanzas"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Descripción de finanzas"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <!-- Botones -->
+            <Button
+                android:id="@+id/btnRetiros"
+                android:layout_width="240dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/rojo3"
+                android:text="Retiros"
+                android:textColor="@color/blanco"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/imgFinanzas"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/btnTransfer"
+                android:layout_width="240dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/rojo3"
+                android:text="Transferencias"
+                android:textColor="@color/blanco"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/btnRetiros"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/btnConsultas"
+                android:layout_width="240dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/rojo3"
+                android:text="Consultas"
+                android:textColor="@color/blanco"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/btnTransfer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/btnDepositar"
+                android:layout_width="240dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="24dp"
+                android:backgroundTint="@color/rojo3"
+                android:text="Depositar Dinero"
+                android:textColor="@color/blanco"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/btnConsultas"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
