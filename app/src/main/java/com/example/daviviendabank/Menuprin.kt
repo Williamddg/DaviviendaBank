@@ -30,6 +30,8 @@ class Menuprin : AppCompatActivity() {
     private lateinit var btnCertificados: LinearLayout
     private lateinit var btnPazSalvo: LinearLayout
     private lateinit var scrollContent: ScrollView
+    private var userId: String? = null
+
 
 
 
@@ -122,8 +124,24 @@ class Menuprin : AppCompatActivity() {
         }
 
         btnCertificados.setOnClickListener {
-            showCustomDialog()
+            val sharedPreferences = getSharedPreferences("user_session", MODE_PRIVATE)
+            val username = sharedPreferences.getString("username", null)
+
+            if (username != null) {
+                val userData = BankData.getUserData(username)
+
+                if (userData != null) {
+                    val intent = Intent(this, Certificado::class.java)
+                    intent.putExtra("identificacion", username) // 🔹 Aquí se pasa el ID o número de cuenta
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, "Usuario no encontrado", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(this, "No hay sesión activa", Toast.LENGTH_SHORT).show()
+            }
         }
+
 
         btnPazSalvo.setOnClickListener {
             showCustomDialog()
