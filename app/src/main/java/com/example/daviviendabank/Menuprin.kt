@@ -99,7 +99,7 @@ class Menuprin : AppCompatActivity() {
         }
 
         btnMenuQR.setOnClickListener {
-            showCustomDialog()
+            startActivity(Intent(this, CodigoQR::class.java))
         }
 
         btnMisLlaves.setOnClickListener {
