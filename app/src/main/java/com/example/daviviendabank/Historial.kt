@@ -48,7 +48,7 @@ class Historial : AppCompatActivity() {
             return
         }
 
-        val transacciones = BankData.getTransactionHistory(username)
+        val transacciones = DatosUsuarios.getTransactionHistory(username)
 
         if (transacciones != null) {
             recyclerView.adapter = TransaccionAdapter(transacciones)
@@ -57,7 +57,7 @@ class Historial : AppCompatActivity() {
         }
     }
 
-    class TransaccionAdapter(private val transacciones: List<BankData.Transaction>) :
+    class TransaccionAdapter(private val transacciones: List<DatosUsuarios.Transaction>) :
         RecyclerView.Adapter<TransaccionAdapter.ViewHolder>() {
 
         class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {

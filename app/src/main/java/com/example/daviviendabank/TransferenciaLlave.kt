@@ -59,7 +59,7 @@ class TransferenciaLlave : AppCompatActivity() {
             return
         }
 
-        val (success, message) = BankData.performTransferWithKey(originId, destinationKey, amount)
+        val (success, message) = DatosUsuarios.performTransferWithKey(originId, destinationKey, amount)
 
         mostrarMensaje(message)
 

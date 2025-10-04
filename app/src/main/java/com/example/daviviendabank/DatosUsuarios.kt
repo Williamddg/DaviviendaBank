@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-object BankData {
+object DatosUsuarios {
 
     // Estructura para el historial de transacciones
     data class Transaction(

@@ -64,7 +64,7 @@ class Certificado : AppCompatActivity() {
             return
         }
 
-        val userData = BankData.getUserData(userId!!)
+        val userData = DatosUsuarios.getUserData(userId!!)
         if (userData == null) {
             Toast.makeText(this, "No se encontraron datos del usuario", Toast.LENGTH_SHORT).show()
             finish()
@@ -84,7 +84,7 @@ class Certificado : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val userData = BankData.getUserData(userId!!)
+            val userData = DatosUsuarios.getUserData(userId!!)
             if (userData == null) {
                 Toast.makeText(this, "No se encontraron los datos del usuario", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -97,7 +97,7 @@ class Certificado : AppCompatActivity() {
             val ciudad = userData[5]
             val cuenta = userId!!
 
-            val historial = BankData.getTransactionHistory(cuenta)
+            val historial = DatosUsuarios.getTransactionHistory(cuenta)
             val fechaApertura = if (!historial.isNullOrEmpty()) {
                 historial.last().date // última transacción = la más antigua
             } else {

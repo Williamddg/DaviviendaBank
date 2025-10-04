@@ -82,7 +82,7 @@ class Saldo : AppCompatActivity() {
             return
         }
 
-        val userData = BankData.getUserData(username)
+        val userData = DatosUsuarios.getUserData(username)
 
         if (userData != null) {
             // userData: [0: password, 1: fullName, 2: balance, 3: email, 4: phone, 5: city]

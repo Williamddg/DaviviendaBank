@@ -57,7 +57,7 @@ class Login : AppCompatActivity() {
             return
         }
 
-        if (BankData.login(user, pass)) {
+        if (DatosUsuarios.login(user, pass)) {
             // Guardar el usuario en SharedPreferences
             val sharedPreferences = getSharedPreferences("user_session", MODE_PRIVATE)
             val editor = sharedPreferences.edit()

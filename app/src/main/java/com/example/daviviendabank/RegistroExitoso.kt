@@ -17,10 +17,7 @@ class RegistroExitoso : AppCompatActivity() {
         val txtMensaje: TextView = findViewById(R.id.txtMssWelcome)
         val btnContinuar: Button = findViewById(R.id.btnContinuar)
 
-        txtMensaje.text = "¡Gracias por unirte, ${intent.getStringExtra("nombre")}! Esperamos que disfrutes esta nueva oportunidad!"
+        txtMensaje.text = "¡Gracias por unirte a Banco Davivienda, ${intent.getStringExtra("nombre")}!\nEsperamos que disfrutes esta nueva oportunidad."
         btnContinuar.setOnClickListener { finish() }
-
-
-
     }
 }

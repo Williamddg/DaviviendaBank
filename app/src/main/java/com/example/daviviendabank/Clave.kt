@@ -65,7 +65,7 @@ class Clave : AppCompatActivity() {
             return
         }
 
-        val (success, message) = BankData.changePassword(username, oldPass, newPass)
+        val (success, message) = DatosUsuarios.changePassword(username, oldPass, newPass)
 
         showToast(message)
 

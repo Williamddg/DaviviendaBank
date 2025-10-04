@@ -113,7 +113,7 @@ class Registrar : AppCompatActivity() {
             return
         }
 
-        val success = BankData.registerUser(id, pass, name, email, phone, city)
+        val success = DatosUsuarios.registerUser(id, pass, name, email, phone, city)
 
         if (success) {
             val intent = Intent(this, RegistroExitoso::class.java).apply {

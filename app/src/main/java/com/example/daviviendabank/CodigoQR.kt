@@ -44,7 +44,7 @@ class CodigoQR : AppCompatActivity() {
         val username = sharedPreferences.getString("username", null)
 
         if (username != null) {
-            val userData = BankData.getUserData(username)
+            val userData = DatosUsuarios.getUserData(username)
             if (userData != null) {
                 val name = userData.getOrNull(1) ?: "Usuario"
 

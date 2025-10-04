@@ -67,7 +67,7 @@ class Cuenta : AppCompatActivity() {
     }
 
     private fun loadUserData(username: String) {
-        val userData = BankData.getUserData(username)
+        val userData = DatosUsuarios.getUserData(username)
         if (userData != null) {
             nombre = userData[1]
             celular = userData[4]

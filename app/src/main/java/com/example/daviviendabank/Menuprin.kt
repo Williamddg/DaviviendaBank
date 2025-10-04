@@ -128,7 +128,7 @@ class Menuprin : AppCompatActivity() {
             val username = sharedPreferences.getString("username", null)
 
             if (username != null) {
-                val userData = BankData.getUserData(username)
+                val userData = DatosUsuarios.getUserData(username)
 
                 if (userData != null) {
                     val intent = Intent(this, Certificado::class.java)
@@ -160,7 +160,7 @@ class Menuprin : AppCompatActivity() {
         val username = sharedPreferences.getString("username", null)
 
         if (username != null) {
-            val userData = BankData.getUserData(username)
+            val userData = DatosUsuarios.getUserData(username)
             if (userData != null) {
                 val name = userData[1] // Nombre completo
                 txtUser.text = "Hola, $name"
@@ -177,7 +177,7 @@ class Menuprin : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("user_session", MODE_PRIVATE)
         val username = sharedPreferences.getString("username", null)
         if (username != null) {
-            val userData = BankData.getUserData(username)
+            val userData = DatosUsuarios.getUserData(username)
             if (userData != null) {
                 val balance = userData[2].toDoubleOrNull() ?: 0.0
                 txtSaldo2.text = formatCurrency(balance)

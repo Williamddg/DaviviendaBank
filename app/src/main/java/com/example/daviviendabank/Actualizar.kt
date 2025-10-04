@@ -49,7 +49,7 @@ class Actualizar : AppCompatActivity() {
             return
         }
 
-        val userData = BankData.getUserData(originalId)
+        val userData = DatosUsuarios.getUserData(originalId)
         if (userData == null) {
             Toast.makeText(this, "Error: Datos de usuario no encontrados", Toast.LENGTH_SHORT).show()
             finish()
@@ -99,7 +99,7 @@ class Actualizar : AppCompatActivity() {
             return
         }
 
-        val (success, message) = BankData.updateUser(originalId, newId, newName, newEmail, newPhone, newCity)
+        val (success, message) = DatosUsuarios.updateUser(originalId, newId, newName, newEmail, newPhone, newCity)
 
         showResultDialog(if (success) "Éxito" else "Error de actualización", message)
 

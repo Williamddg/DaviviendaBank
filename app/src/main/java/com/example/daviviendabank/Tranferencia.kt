@@ -69,7 +69,7 @@ class Tranferencia : AppCompatActivity() {
             return
         }
 
-        val (success, message) = BankData.performTransfer(usuario, cuentaDestino, monto)
+        val (success, message) = DatosUsuarios.performTransfer(usuario, cuentaDestino, monto)
 
         if (success) {
             mostrarMensaje("Transferencia exitosa!")

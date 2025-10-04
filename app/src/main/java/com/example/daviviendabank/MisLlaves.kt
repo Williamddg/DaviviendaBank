@@ -59,7 +59,7 @@ class MisLlaves : AppCompatActivity() {
         }
         Log.d("MisLlavesDebug", "onCreate: userId = $userId")
 
-        userData = BankData.getUserData(userId!!)
+        userData = DatosUsuarios.getUserData(userId!!)
         if (userData == null) {
             Log.e("MisLlavesDebug", "onCreate: userData is NULL for userId $userId. Finishing activity.")
             Toast.makeText(this, "Error al cargar datos del usuario", Toast.LENGTH_SHORT).show()
@@ -114,9 +114,9 @@ class MisLlaves : AppCompatActivity() {
 
     private fun handleKeyChange(key: String, isActive: Boolean) {
         if (isActive) {
-            BankData.addKey(userId!!, key)
+            DatosUsuarios.addKey(userId!!, key)
         } else {
-            BankData.removeKey(userId!!, key)
+            DatosUsuarios.removeKey(userId!!, key)
         }
         // Actualizar la lista visual
         updateKeyList()
@@ -130,12 +130,12 @@ class MisLlaves : AppCompatActivity() {
     }
 
     private fun updateKeyList() {
-        val activeKeys = BankData.getUserKeys(userId!!)
+        val activeKeys = DatosUsuarios.getUserKeys(userId!!)
         keyAdapter.updateKeys(activeKeys)
     }
 
     private fun loadInitialSwitchState() {
-        val activeKeys = BankData.getUserKeys(userId!!).map { it.key }
+        val activeKeys = DatosUsuarios.getUserKeys(userId!!).map { it.key }
 
         // Usar un bloque para evitar múltiples listeners al inicio
         switchDav.post { switchDav.isChecked = activeKeys.contains(keyDav) }
@@ -146,7 +146,7 @@ class MisLlaves : AppCompatActivity() {
 
     // --- RecyclerView Adapter ---
     // --- RecyclerView Adapter ---
-    class KeyAdapter(private var keys: List<BankData.UserKey>) : RecyclerView.Adapter<KeyAdapter.ViewHolder>() {
+    class KeyAdapter(private var keys: List<DatosUsuarios.UserKey>) : RecyclerView.Adapter<KeyAdapter.ViewHolder>() {
 
         class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             val txtNombreLlave: TextView = itemView.findViewById(R.id.txtNombreLlave)
@@ -172,7 +172,7 @@ class MisLlaves : AppCompatActivity() {
         override fun getItemCount() = keys.size
 
         @SuppressLint("NotifyDataSetChanged")
-        fun updateKeys(newKeys: List<BankData.UserKey>) {
+        fun updateKeys(newKeys: List<DatosUsuarios.UserKey>) {
             keys = newKeys
             notifyDataSetChanged()
         }

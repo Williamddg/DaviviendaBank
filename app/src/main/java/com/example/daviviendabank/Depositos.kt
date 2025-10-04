@@ -65,7 +65,7 @@ class Depositos : AppCompatActivity() {
             return
         }
 
-        val (success, message) = BankData.performDeposit(username, monto)
+        val (success, message) = DatosUsuarios.performDeposit(username, monto)
 
         if (success) {
             val nuevoSaldo = message.toDoubleOrNull() ?: 0.0

@@ -65,7 +65,7 @@ class Retiros : AppCompatActivity() {
             return
         }
 
-        val (success, message) = BankData.performWithdrawal(username, monto)
+        val (success, message) = DatosUsuarios.performWithdrawal(username, monto)
 
         if (success) {
             val nuevoSaldo = message.toDoubleOrNull() ?: 0.0

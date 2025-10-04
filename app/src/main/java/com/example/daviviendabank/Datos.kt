@@ -58,7 +58,7 @@ class Datos : AppCompatActivity() {
     private fun loadUserData() {
         if (userId == null) return
 
-        val userData = BankData.getUserData(userId!!)
+        val userData = DatosUsuarios.getUserData(userId!!)
         if (userData == null) {
             // Manejar el caso en que el usuario ya no exista
             finish()
