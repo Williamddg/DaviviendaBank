@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Tranferencia"
+    tools:context=".TransferenciaLlave"
     android:background="@drawable/login_screen">
 
     <TextView
@@ -31,7 +31,7 @@
         android:id="@+id/textView13"
         android:layout_width="243dp"
         android:layout_height="50dp"
-        android:text="Escribe el numero de cuenta a la cual deseas transferir"
+        android:text="Escribe la llave a la cual deseas transferir"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/negro"
@@ -44,14 +44,14 @@
         app:layout_constraintVertical_bias="0.359" />
 
     <EditText
-        android:id="@+id/txtNumerodeCuenta"
+        android:id="@+id/txtLlave"
         android:layout_width="340dp"
         android:layout_height="50dp"
         android:ems="10"
         android:hint="Llave"
         android:textColor="@color/negro"
         android:textColorHint="@color/grishint2"
-        android:inputType="number"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -104,5 +104,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.823" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

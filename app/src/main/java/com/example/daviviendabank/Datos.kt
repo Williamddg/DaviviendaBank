@@ -1,6 +1,8 @@
 package com.example.daviviendabank
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +17,8 @@ class Datos : AppCompatActivity() {
     private lateinit var txtCorreo: TextView
     private lateinit var txtIdentificacion: TextView
     private lateinit var txtCiudad: TextView
+
+    private lateinit var btnActualizar: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +43,7 @@ class Datos : AppCompatActivity() {
         txtCorreo = findViewById(R.id.txtCorreo)
         txtIdentificacion = findViewById(R.id.txtIdentificacion)
         txtCiudad = findViewById(R.id.txtCiudad)
+        btnActualizar = findViewById(R.id.btnActualizar)
     }
 
     private fun loadUserData() {
@@ -58,6 +63,10 @@ class Datos : AppCompatActivity() {
     private fun setupClickListeners() {
         txtVolver.setOnClickListener {
             finish()
+        }
+
+        btnActualizar.setOnClickListener {
+            startActivity(Intent(this, Actualizar::class.java))
         }
     }
 }

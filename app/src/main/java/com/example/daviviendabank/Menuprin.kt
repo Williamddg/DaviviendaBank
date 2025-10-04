@@ -105,7 +105,7 @@ class Menuprin : AppCompatActivity() {
         }
 
         btnMisLlaves.setOnClickListener {
-            showCustomDialog()
+            startActivity(Intent(this, MisLlaves::class.java))
         }
 
         btnTransferirLlaves.setOnClickListener {

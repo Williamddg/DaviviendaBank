@@ -24,7 +24,7 @@ class Tranferencia : AppCompatActivity() {
         // Inicialización de vistas
         txtBackTrans = findViewById(R.id.txtBackTrans)
         txtNumeroCuenta = findViewById(R.id.txtNumerodeCuenta)
-        txtMonto = findViewById(R.id.editTextText3)
+        txtMonto = findViewById(R.id.txtValor)
         btnTransferir = findViewById(R.id.btnTrans)
         sharedPreferences = getSharedPreferences("user_session", MODE_PRIVATE)
 
