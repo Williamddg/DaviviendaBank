@@ -34,7 +34,7 @@ class Registrar : AppCompatActivity() {
         txtSignIn = findViewById(R.id.txtSignIn)
         txtName = findViewById(R.id.txtNombre)
         txtEmail = findViewById(R.id.txtEmail)
-        spinnerCity = findViewById(R.id.spinnerCity) // ID del Spinner
+        spinnerCity = findViewById(R.id.ListaCiudades) // ID del Spinner
         txtPhone = findViewById(R.id.txtPhone)
         txtId = findViewById(R.id.txtId)
         txtPassword = findViewById(R.id.txtPass)
@@ -61,15 +61,15 @@ class Registrar : AppCompatActivity() {
     private fun setupCitySpinner() {
         // Crear un array con el hint como primer elemento
         val citiesWithHint = mutableListOf("Ciudad")
-        citiesWithHint.addAll(resources.getStringArray(R.array.cities_array))
+        citiesWithHint.addAll(resources.getStringArray(R.array.Arreglo_ciudades))
         
         ArrayAdapter(
             this,
-            R.layout.spinner_item, // Layout para el elemento seleccionado
+            R.layout.elemento_ciudad, // Layout para el elemento seleccionado
             citiesWithHint
         ).also { adapter ->
             // Layout para el dropdown
-            adapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
+            adapter.setDropDownViewResource(R.layout.desplegable_elemento_ciudad)
             spinnerCity.adapter = adapter
         }
     }

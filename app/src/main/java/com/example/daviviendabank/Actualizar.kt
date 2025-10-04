@@ -34,7 +34,7 @@ class Actualizar : AppCompatActivity() {
     private fun initViews() {
         txtNombre = findViewById(R.id.txtNombre)
         txtEmail = findViewById(R.id.txtEmail)
-        spinnerCity = findViewById(R.id.spinnerCity)
+        spinnerCity = findViewById(R.id.ListaCiudades)
         txtId = findViewById(R.id.txtId)
         txtPhone = findViewById(R.id.txtPhone)
         btnActualizar = findViewById(R.id.btnActualizar)
@@ -65,9 +65,9 @@ class Actualizar : AppCompatActivity() {
     }
 
     private fun setupCitySpinner(currentCity: String?) {
-        val cities = resources.getStringArray(R.array.cities_array).toMutableList()
-        val adapter = ArrayAdapter(this, R.layout.spinner_item, cities)
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
+        val cities = resources.getStringArray(R.array.Arreglo_ciudades).toMutableList()
+        val adapter = ArrayAdapter(this, R.layout.elemento_ciudad, cities)
+        adapter.setDropDownViewResource(R.layout.desplegable_elemento_ciudad)
         spinnerCity.adapter = adapter
 
         if (currentCity != null) {

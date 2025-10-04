@@ -79,15 +79,15 @@
 
     <!-- Spinner de Ciudad -->
     <Spinner
-        android:id="@+id/spinnerCity"
+        android:id="@+id/ListaCiudades"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/spinner_border"
-        android:dropDownSelector="@color/spinnerBackground"
-        android:popupBackground="@color/spinnerBackground"
+        android:background="@drawable/borde_desplegable"
+        android:dropDownSelector="@color/fondo_ciudad"
+        android:popupBackground="@color/fondo_ciudad"
         android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,7 +109,7 @@
         android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinnerCity" />
+        app:layout_constraintTop_toBottomOf="@id/ListaCiudades" />
 
     <!-- Campo Teléfono -->
     <EditText

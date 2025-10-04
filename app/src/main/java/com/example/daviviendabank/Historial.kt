@@ -68,7 +68,7 @@ class Historial : AppCompatActivity() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_transaccion, parent, false)
+                .inflate(R.layout.elemento_transaccion, parent, false)
             return ViewHolder(view)
         }
 

@@ -156,7 +156,7 @@ class MisLlaves : AppCompatActivity() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_llave, parent, false)
+                .inflate(R.layout.elemento_llave, parent, false)
             return ViewHolder(view)
         }
 

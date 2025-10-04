@@ -11,5 +11,5 @@
     <color name="rojo">#FF0000</color>
     <color name="rojo2">#D72F3D</color>
     <color name="rojo3">#D9303E</color>
-    <color name="spinnerBackground">#eceded</color>
+    <color name="fondo_ciudad">#eceded</color>
 </resources>

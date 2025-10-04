@@ -2,7 +2,6 @@ package com.example.daviviendabank
 
 import android.os.Bundle
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -57,9 +56,9 @@ class Ayuda_servicio : AppCompatActivity() {
     }
 
     private fun showCustomDialog() {
-        val dialogView = layoutInflater.inflate(R.layout.dialog_custom, null)
+        val dialogView = layoutInflater.inflate(R.layout.mensaje_falta, null)
 
-        val dialog = AlertDialog.Builder(this, R.style.TransparentDialog)
+        val dialog = AlertDialog.Builder(this, R.style.FondoTransparente)
             .setView(dialogView)
             .create()
 

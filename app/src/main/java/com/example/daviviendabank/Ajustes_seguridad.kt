@@ -63,9 +63,9 @@ class Ajustes_seguridad : AppCompatActivity() {
     }
 
     private fun showCustomDialog() {
-        val dialogView = layoutInflater.inflate(R.layout.dialog_custom, null)
+        val dialogView = layoutInflater.inflate(R.layout.mensaje_falta, null)
 
-        val dialog = AlertDialog.Builder(this, R.style.TransparentDialog)
+        val dialog = AlertDialog.Builder(this, R.style.FondoTransparente)
             .setView(dialogView)
             .create()
 

@@ -14,7 +14,7 @@
         android:layout_height="379dp"
         android:layout_gravity="center"
         android:contentDescription="Logo de la app"
-        android:src="@drawable/dav_no_background"
+        android:src="@drawable/dav_icono_sinfondo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
