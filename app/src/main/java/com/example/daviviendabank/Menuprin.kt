@@ -95,7 +95,9 @@ class Menuprin : AppCompatActivity() {
         }
 
         btnMenuInicio.setOnClickListener {
-            scrollContent.fullScroll(ScrollView.FOCUS_UP)
+            scrollContent.post {
+                scrollContent.smoothScrollTo(0, 0)
+            }
         }
 
         btnMenuQR.setOnClickListener {
