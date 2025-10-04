@@ -1,9 +1,10 @@
 package com.example.daviviendabank
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -45,23 +46,33 @@ class Ajustes_seguridad : AppCompatActivity() {
         }
 
         txtViajes.setOnClickListener {
-            showToast("Próximamente: Cambiar clave")
+            showCustomDialog()
         }
 
         txtLimites.setOnClickListener {
-            showToast("Próximamente: Definir clave transaccional")
+            showCustomDialog()
         }
 
         txtCambiarClave.setOnClickListener {
-            showToast("Próximamente: Reportar fraude")
+            startActivity(Intent(this, Clave::class.java))
         }
 
         txtLimitesPSE.setOnClickListener {
-            showToast("Próximamente: Cambiar clave")
+            showCustomDialog()
         }
     }
 
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    private fun showCustomDialog() {
+        val dialogView = layoutInflater.inflate(R.layout.dialog_custom, null)
+
+        val dialog = AlertDialog.Builder(this, R.style.TransparentDialog)
+            .setView(dialogView)
+            .create()
+
+        dialogView.findViewById<TextView>(R.id.btnAceptar).setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
     }
 }

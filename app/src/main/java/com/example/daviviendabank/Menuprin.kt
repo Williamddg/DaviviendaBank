@@ -6,7 +6,10 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import android.widget.LinearLayout
+import android.widget.ScrollView
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 class Menuprin : AppCompatActivity() {
@@ -15,10 +18,20 @@ class Menuprin : AppCompatActivity() {
     private lateinit var txtSaldo2: TextView
     private lateinit var txtUser: TextView
     private lateinit var btnProfile: Button
-    private lateinit var btnRetiros: Button
-    private lateinit var btnTransfer: Button
-    private lateinit var btnConsultas: Button
-    private lateinit var btnDepositar: Button
+    private lateinit var btnRecargarMiCuenta: LinearLayout
+    private lateinit var btnRecargas: LinearLayout
+    private lateinit var btnRetirarSinTarjeta: LinearLayout
+    private lateinit var btnMenuTransferir: LinearLayout
+    private lateinit var btnMenuHistorial: LinearLayout
+    private lateinit var btnMenuInicio: LinearLayout
+    private lateinit var btnMenuQR: LinearLayout
+    private lateinit var btnMisLlaves: LinearLayout
+    private lateinit var btnTransferirLlaves: LinearLayout
+    private lateinit var btnCertificados: LinearLayout
+    private lateinit var btnPazSalvo: LinearLayout
+    private lateinit var scrollContent: ScrollView
+
+
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,10 +41,18 @@ class Menuprin : AppCompatActivity() {
 
         // Inicialización de vistas
         btnProfile = findViewById(R.id.btnProfile)
-        btnRetiros = findViewById(R.id.btnRetiros)
-        btnTransfer = findViewById(R.id.btnTransfer)
-        btnConsultas = findViewById(R.id.btnConsultas)
-        btnDepositar = findViewById(R.id.btnDepositar)
+        btnRecargarMiCuenta = findViewById(R.id.btnRecargarMiCuenta)
+        btnRecargas = findViewById(R.id.btnRecargas)
+        btnRetirarSinTarjeta = findViewById(R.id.btnRetirarSinTarjeta)
+        btnMenuTransferir = findViewById(R.id.btnMenuTransferir)
+        btnMenuHistorial = findViewById(R.id.btnMenuHistorial)
+        btnMenuInicio = findViewById(R.id.btnMenuInicio)
+        btnMenuQR = findViewById(R.id.btnMenuQR)
+        btnMisLlaves = findViewById(R.id.btnMisLlaves)
+        btnTransferirLlaves = findViewById(R.id.btnTransferirLlave)
+        btnCertificados = findViewById(R.id.btnCertificados)
+        btnPazSalvo = findViewById(R.id.btnPazSalvo)
+        scrollContent = findViewById<ScrollView>(R.id.scrollContent)
         txtUser = findViewById(R.id.txtUser)
         txtSaldo2 = findViewById(R.id.txtSaldo2)
 
@@ -53,20 +74,48 @@ class Menuprin : AppCompatActivity() {
             }
         }
 
-        btnRetiros.setOnClickListener {
+        btnRecargarMiCuenta.setOnClickListener {
+            startActivity(Intent(this, Depositos::class.java))
+        }
+
+        btnRecargas.setOnClickListener {
+            startActivity(Intent(this, Depositos::class.java))
+        }
+
+        btnRetirarSinTarjeta.setOnClickListener {
             startActivity(Intent(this, Retiros::class.java))
         }
 
-        btnTransfer.setOnClickListener {
+        btnMenuTransferir.setOnClickListener {
             startActivity(Intent(this, Tranferencia::class.java))
         }
 
-        btnConsultas.setOnClickListener {
-            startActivity(Intent(this, Consultas::class.java))
+        btnMenuHistorial.setOnClickListener {
+            startActivity(Intent(this, Historial::class.java))
         }
 
-        btnDepositar.setOnClickListener {
-            startActivity(Intent(this, Depositos::class.java))
+        btnMenuInicio.setOnClickListener {
+            scrollContent.fullScroll(ScrollView.FOCUS_UP)
+        }
+
+        btnMenuQR.setOnClickListener {
+            showCustomDialog()
+        }
+
+        btnMisLlaves.setOnClickListener {
+            showCustomDialog()
+        }
+
+        btnTransferirLlaves.setOnClickListener {
+            showCustomDialog()
+        }
+
+        btnCertificados.setOnClickListener {
+            showCustomDialog()
+        }
+
+        btnPazSalvo.setOnClickListener {
+            showCustomDialog()
         }
     }
 
@@ -113,5 +162,19 @@ class Menuprin : AppCompatActivity() {
     private fun formatCurrency(amount: Double): String {
         return java.text.NumberFormat.getCurrencyInstance(java.util.Locale("es", "CO"))
             .format(amount)
+    }
+
+    private fun showCustomDialog() {
+        val dialogView = layoutInflater.inflate(R.layout.dialog_custom, null)
+
+        val dialog = AlertDialog.Builder(this, R.style.TransparentDialog)
+            .setView(dialogView)
+            .create()
+
+        dialogView.findViewById<TextView>(R.id.btnAceptar).setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
     }
 }

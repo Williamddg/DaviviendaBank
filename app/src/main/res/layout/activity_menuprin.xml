@@ -44,11 +44,12 @@
         android:layout_marginTop="60dp"
         android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@id/btnProfile"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomMenu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -301,6 +302,7 @@
 
                     <!-- Celda 1 -->
                     <LinearLayout
+                        android:id="@+id/btnMisLlaves"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -328,6 +330,7 @@
 
                     <!-- Celda 2 -->
                     <LinearLayout
+                        android:id="@+id/btnTransferirLlave"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -352,6 +355,7 @@
 
                     <!-- Celda 3 -->
                     <LinearLayout
+                        android:id="@+id/btnRecargarMiCuenta"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -376,6 +380,7 @@
 
                     <!-- Celda 4 -->
                     <LinearLayout
+                        android:id="@+id/btnRetirarSinTarjeta"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -400,6 +405,7 @@
 
                     <!-- Celda 5 -->
                     <LinearLayout
+                        android:id="@+id/btnCertificados"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -424,6 +430,7 @@
 
                     <!-- Celda 6 -->
                     <LinearLayout
+                        android:id="@+id/btnPazSalvo"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -448,6 +455,7 @@
 
                     <!-- Celda 7 -->
                     <LinearLayout
+                        android:id="@+id/btnRecargas"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -658,59 +666,6 @@
 
 
             <!-- Botones -->
-            <Button
-                android:id="@+id/btnRetiros"
-                android:layout_width="240dp"
-                android:layout_height="52dp"
-                android:layout_marginTop="24dp"
-                android:backgroundTint="@color/rojo3"
-                android:text="Retiros"
-                android:textColor="@color/blanco"
-                android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/imgFinanzas"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <Button
-                android:id="@+id/btnTransfer"
-                android:layout_width="240dp"
-                android:layout_height="52dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="@color/rojo3"
-                android:text="Transferencias"
-                android:textColor="@color/blanco"
-                android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/btnRetiros"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <Button
-                android:id="@+id/btnConsultas"
-                android:layout_width="240dp"
-                android:layout_height="52dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="@color/rojo3"
-                android:text="Consultas"
-                android:textColor="@color/blanco"
-                android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/btnTransfer"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <Button
-                android:id="@+id/btnDepositar"
-                android:layout_width="240dp"
-                android:layout_height="52dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="24dp"
-                android:backgroundTint="@color/rojo3"
-                android:text="Depositar Dinero"
-                android:textColor="@color/blanco"
-                android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/btnConsultas"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
@@ -733,6 +688,7 @@
 
         <!-- Opción 1 -->
         <LinearLayout
+            android:id="@+id/btnMenuInicio"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -758,6 +714,7 @@
 
         <!-- Opción 2 -->
         <LinearLayout
+            android:id="@+id/btnMenuHistorial"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -775,7 +732,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pagar"
+                android:text="Historial"
                 android:textSize="10sp"
                 android:textColor="@color/negro"
                 android:gravity="center"/>
@@ -783,6 +740,7 @@
 
         <!-- Opción 3 -->
         <LinearLayout
+            android:id="@+id/btnMenuQR"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -808,6 +766,7 @@
 
         <!-- Opción 4 -->
         <LinearLayout
+            android:id="@+id/btnMenuTransferir"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
