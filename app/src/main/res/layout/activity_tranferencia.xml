@@ -48,7 +48,7 @@
         android:layout_width="340dp"
         android:layout_height="50dp"
         android:ems="10"
-        android:hint="Llave"
+        android:hint="Nro de cuenta"
         android:textColor="@color/negro"
         android:textColorHint="@color/grishint2"
         android:inputType="number"

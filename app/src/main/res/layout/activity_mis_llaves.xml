@@ -48,6 +48,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="75dp"
+        android:textColor="@color/negro"
         android:text="Consulta las llaves que ya estan registradas en \nDavivienda"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,6 +88,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="54dp"
+        android:textColor="@color/negro"
         android:text="Registre llaves y vinculelas a su cuenta para recibir\ntransferencias"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -115,6 +117,7 @@
         android:layout_marginStart="39dp"
         android:layout_marginTop="8dp"
         android:text="DAV"
+        android:textColor="@color/negro"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView38"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
@@ -126,6 +129,7 @@
         android:layout_marginStart="39dp"
         android:layout_marginTop="8dp"
         android:text="ID"
+        android:textColor="@color/negro"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView39"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
@@ -137,6 +141,7 @@
         android:layout_marginStart="55dp"
         android:layout_marginTop="8dp"
         android:text="TELEFONO"
+        android:textColor="@color/negro"
         app:layout_constraintStart_toEndOf="@+id/switchdav"
         app:layout_constraintTop_toBottomOf="@+id/textView40"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
@@ -148,6 +153,7 @@
         android:layout_marginStart="55dp"
         android:layout_marginTop="8dp"
         android:text="CORREO"
+        android:textColor="@color/negro"
         app:layout_constraintStart_toEndOf="@+id/switchid"
         app:layout_constraintTop_toBottomOf="@+id/textView41"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
@@ -156,10 +162,12 @@
         android:id="@+id/textView38"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
         android:layout_marginTop="16dp"
         android:text="Llave Davivienda"
-        app:layout_constraintTop_toBottomOf="@+id/textView28"
-        tools:layout_editor_absoluteX="39dp" />
+        android:textColor="@color/negro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
     <TextView
         android:id="@+id/textView39"
@@ -168,6 +176,7 @@
         android:layout_marginStart="39dp"
         android:layout_marginTop="20dp"
         android:text="Numero de identificacion"
+        android:textColor="@color/negro"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchdav" />
 
@@ -178,6 +187,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="16dp"
         android:text="Numero de telefono"
+        android:textColor="@color/negro"
         app:layout_constraintStart_toEndOf="@+id/textView38"
         app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
@@ -188,6 +198,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:text="Correo electronico"
+        android:textColor="@color/negro"
         app:layout_constraintStart_toEndOf="@+id/textView39"
         app:layout_constraintTop_toBottomOf="@+id/switchnum" />
 

@@ -1,23 +1,30 @@
 package com.example.daviviendabank
 
+import android.annotation.SuppressLint
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Switch
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SwitchCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MisLlaves : AppCompatActivity() {
 
     private lateinit var sharedPreferences: SharedPreferences
-    private lateinit var switchDav: SwitchCompat
-    private lateinit var switchId: SwitchCompat
-    private lateinit var switchNum: SwitchCompat
-    private lateinit var switchEmail: SwitchCompat
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    private lateinit var switchDav: Switch
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    private lateinit var switchId: Switch
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    private lateinit var switchNum: Switch
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    private lateinit var switchEmail: Switch
     private lateinit var rvLlaves: RecyclerView
     private lateinit var txtBack: TextView
 
@@ -35,21 +42,31 @@ class MisLlaves : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mis_llaves)
+        Log.d("MisLlavesDebug", "onCreate: Activity started")
 
         sharedPreferences = getSharedPreferences("user_session", MODE_PRIVATE)
-        userId = sharedPreferences.getString("username", null)
+        // Patrón híbrido: Intent > SharedPreferences
+        userId = intent.getStringExtra("username") ?: sharedPreferences.getString("username", null)
 
         if (userId == null) {
-            finish() // No debería estar aquí sin sesión
-            return
+            Log.e("MisLlavesDebug", "onCreate: userId is NULL. Redirecting to main.")
+            Toast.makeText(this, "Sesión expirada", Toast.LENGTH_SHORT).show()
+            val intent = android.content.Intent(this, MainActivity::class.java)
+            intent.flags = android.content.Intent.FLAG_ACTIVITY_NEW_TASK or android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            finish()
+            return // Detener la ejecución de onCreate
         }
+        Log.d("MisLlavesDebug", "onCreate: userId = $userId")
 
         userData = BankData.getUserData(userId!!)
-
         if (userData == null) {
-            finish() // Datos de usuario no encontrados
+            Log.e("MisLlavesDebug", "onCreate: userData is NULL for userId $userId. Finishing activity.")
+            Toast.makeText(this, "Error al cargar datos del usuario", Toast.LENGTH_SHORT).show()
+            finish()
             return
         }
+        Log.d("MisLlavesDebug", "onCreate: userData loaded successfully.")
 
         initViews()
         generateKeyValues()
@@ -128,37 +145,47 @@ class MisLlaves : AppCompatActivity() {
     }
 
     // --- RecyclerView Adapter ---
+    // --- RecyclerView Adapter ---
     class KeyAdapter(private var keys: List<BankData.UserKey>) : RecyclerView.Adapter<KeyAdapter.ViewHolder>() {
 
-        // ViewHolder ahora solo contiene un TextView simple.
-        class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-            val textView: TextView = view as TextView
+        class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+            val txtNombreLlave: TextView = itemView.findViewById(R.id.txtNombreLlave)
+            val txtTipoLlave: TextView = itemView.findViewById(R.id.txtTipoLlave)
+            val txtEstadoLlave: TextView = itemView.findViewById(R.id.txtEstadoLlave)
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-            // Crear un TextView programáticamente para evitar problemas de inflación de XML.
-            val textView = TextView(parent.context).apply {
-                layoutParams = ViewGroup.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT
-                )
-                textSize = 16f
-                setTextColor(resources.getColor(android.R.color.white, null))
-                setPadding(16, 16, 16, 16)
-            }
-            return ViewHolder(textView)
+            val view = LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_llave, parent, false)
+            return ViewHolder(view)
         }
 
+        @SuppressLint("SetTextI18n")
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val key = keys[position]
-            holder.textView.text = "Llave: ${key.key}\nActivada: ${key.activationDate}"
+
+            holder.txtNombreLlave.text = key.key  // Aquí va la llave activa
+            holder.txtTipoLlave.text = "Tipo: ${getTipoDesdeLlave(key.key)}"
+            holder.txtEstadoLlave.text = "Activada: ${key.activationDate}"
         }
 
         override fun getItemCount() = keys.size
 
+        @SuppressLint("NotifyDataSetChanged")
         fun updateKeys(newKeys: List<BankData.UserKey>) {
             keys = newKeys
             notifyDataSetChanged()
         }
+
+        // 🔍 Pequeña función auxiliar para mostrar el tipo de llave según el formato
+        private fun getTipoDesdeLlave(key: String): String {
+            return when {
+                key.startsWith("dav") -> "Llave Davivienda"
+                key.contains("@") -> "Correo"
+                key.all { it.isDigit() } -> "Número"
+                else -> "ID"
+            }
+        }
     }
+
 }

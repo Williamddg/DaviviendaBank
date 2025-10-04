@@ -34,7 +34,7 @@ object BankData {
     init {
         // Usuario de prueba
         users["1"] = mutableListOf("123456", "Usuario Prueba", "500000", "prueba@gmail.com", "3", "Bogotá")
-        users["1029141647"] = mutableListOf("123456", "William David Diaz Gonzalez", "10000000", "wdiqzgonzalez44@gmail.com", "3112781234", "Medellín")
+        users["1029141647"] = mutableListOf("123456", "William Diaz", "10000000", "wdiqzgonzalez44@gmail.com", "3112781234", "Medellín")
         
         // Inicializar historiales vacíos
         transactionHistory["1"] = mutableListOf()

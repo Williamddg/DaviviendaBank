@@ -19,7 +19,7 @@
         android:textSize="10dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,10 +31,11 @@
         android:textColor="@color/blanco"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginStart="45dp"
-        app:layout_constraintStart_toEndOf="@+id/btnProfile"
         app:layout_constraintTop_toTopOf="@+id/btnProfile"
-        app:layout_constraintBottom_toBottomOf="@+id/btnProfile" />
+        app:layout_constraintBottom_toBottomOf="@+id/btnProfile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <!-- Scroll general -->
     <ScrollView

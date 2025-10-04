@@ -48,4 +48,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("com.android.volley:volley:1.2.1") //envio de parametros desde android hasta el backend y formatos JSON
     implementation("com.google.zxing:core:3.5.1")   //creaciond e codigo qr
+    implementation("androidx.cardview:cardview:1.0.0")
 }

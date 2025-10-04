@@ -105,7 +105,16 @@ class Menuprin : AppCompatActivity() {
         }
 
         btnMisLlaves.setOnClickListener {
-            startActivity(Intent(this, MisLlaves::class.java))
+            val sharedPreferences = getSharedPreferences("user_session", MODE_PRIVATE)
+            val username = sharedPreferences.getString("username", null)
+
+            if (username != null) {
+                val intent = Intent(this, MisLlaves::class.java)
+                intent.putExtra("username", username) // <-- PASO CLAVE: Añadir el extra
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "No hay sesión activa", Toast.LENGTH_SHORT).show()
+            }
         }
 
         btnTransferirLlaves.setOnClickListener {
