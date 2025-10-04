@@ -177,15 +177,16 @@ class MisLlaves : AppCompatActivity() {
             notifyDataSetChanged()
         }
 
-        // 🔍 Pequeña función auxiliar para mostrar el tipo de llave según el formato
-        private fun getTipoDesdeLlave(key: String): String {
+        private fun getTipoDesdeLlave(key: String): String {    //función para mostrar el tipo de llave
             return when {
                 key.startsWith("dav") -> "Llave Davivienda"
                 key.contains("@") -> "Correo"
-                key.all { it.isDigit() } -> "Número"
+                key.all { it.isDigit() } && key.startsWith("3") -> "Número teléfono"
+                key.all { it.isDigit() } -> "Identificación"
                 else -> "ID"
             }
         }
+
     }
 
 }

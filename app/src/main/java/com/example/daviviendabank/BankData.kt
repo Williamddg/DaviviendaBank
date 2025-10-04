@@ -1,4 +1,3 @@
-
 package com.example.daviviendabank
 
 import java.text.SimpleDateFormat
@@ -35,7 +34,7 @@ object BankData {
         // Usuario de prueba
         users["1"] = mutableListOf("123456", "Usuario Prueba", "500000", "prueba@gmail.com", "3", "Bogotá")
         users["1029141647"] = mutableListOf("123456", "William Diaz", "10000000", "wdiqzgonzalez44@gmail.com", "3112781234", "Medellín")
-        
+
         // Inicializar historiales vacíos
         transactionHistory["1"] = mutableListOf()
         transactionHistory["1029141647"] = mutableListOf()
@@ -85,7 +84,7 @@ object BankData {
         val currentBalance = userData[2].toDouble()
         val newBalance = currentBalance + amount
         userData[2] = newBalance.toString()
-        
+
         addTransaction(userId, "deposito", amount, "Depósito a cuenta propia")
         return Pair(true, newBalance.toString())
     }
@@ -103,7 +102,7 @@ object BankData {
 
         val newBalance = currentBalance - amount
         userData[2] = newBalance.toString()
-        
+
         addTransaction(userId, "retiro", amount, "Retiro de cuenta propia")
         return Pair(true, newBalance.toString())
     }
@@ -138,7 +137,7 @@ object BankData {
 
         return Pair(true, "Transferencia exitosa.")
     }
-    
+
     fun getTransactionHistory(userId: String): List<Transaction>? {
         return transactionHistory[userId]
     }
