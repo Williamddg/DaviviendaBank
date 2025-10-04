@@ -25,12 +25,12 @@ object BankData {
 
     init {
         // Usuario de prueba
-        users["12345"] = mutableListOf("password123", "Felipe Pérez", "1000000", "felipe.perez@email.com", "3001234567", "Bogotá")
-        users["54321"] = mutableListOf("admin", "Ana García", "500000", "ana.garcia@email.com", "3109876543", "Medellín")
+        users["1"] = mutableListOf("123456", "Usuario Prueba", "500000", "prueba@gmail.com", "3", "Bogotá")
+        users["1029141647"] = mutableListOf("123456", "William David Diaz Gonzalez", "10000000", "wdiqzgonzalez44@gmail.com", "3112781234", "Medellín")
         
         // Inicializar historiales vacíos
-        transactionHistory["12345"] = mutableListOf()
-        transactionHistory["54321"] = mutableListOf()
+        transactionHistory["1"] = mutableListOf()
+        transactionHistory["1029141647"] = mutableListOf()
     }
 
     private fun getCurrentDate(): String {
