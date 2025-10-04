@@ -46,13 +46,12 @@ class CodigoQR : AppCompatActivity() {
         if (username != null) {
             val userData = BankData.getUserData(username)
             if (userData != null) {
-                val identificacion = userData[0] ?: "0000" // asume índice 0 = id
                 val name = userData.getOrNull(1) ?: "Usuario"
 
                 txtUser.text = "Código QR de $name"
 
-                // Genera el QR automáticamente con la identificación
-                generarQR(identificacion)
+                // Genera el QR automáticamente con la identificación (username)
+                generarQR(username)
                 return
             }
         }
