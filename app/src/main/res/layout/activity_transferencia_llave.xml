@@ -9,7 +9,7 @@
     android:background="@drawable/login_screen">
 
     <TextView
-        android:id="@+id/txtBackTrans"
+        android:id="@+id/txtBackTransLlave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -90,7 +90,7 @@
         app:layout_constraintVertical_bias="0.606" />
 
     <Button
-        android:id="@+id/btnTrans"
+        android:id="@+id/btnTransLlave"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:backgroundTint="@color/rojo3"

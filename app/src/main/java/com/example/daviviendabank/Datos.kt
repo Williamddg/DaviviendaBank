@@ -19,6 +19,7 @@ class Datos : AppCompatActivity() {
     private lateinit var txtCiudad: TextView
 
     private lateinit var btnActualizar: Button
+    private var userId: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,9 +32,17 @@ class Datos : AppCompatActivity() {
             insets
         }
 
+        // Guardar el ID de usuario de forma persistente en la activity
+        userId = intent.getStringExtra("identificacion")
+
         initViews()
-        loadUserData()
         setupClickListeners()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Cargar/Recargar los datos cada vez que la activity es visible
+        loadUserData()
     }
 
     private fun initViews() {
@@ -47,17 +56,21 @@ class Datos : AppCompatActivity() {
     }
 
     private fun loadUserData() {
-        val nombre = intent.getStringExtra("nombre")
-        val celular = intent.getStringExtra("celular")
-        val correo = intent.getStringExtra("correo")
-        val identificacion = intent.getStringExtra("identificacion")
-        val ciudad = intent.getStringExtra("ciudad")
+        if (userId == null) return
 
-        txtUser3.text = nombre
-        txtCelular.text = celular
-        txtCorreo.text = correo
-        txtIdentificacion.text = identificacion
-        txtCiudad.text = ciudad
+        val userData = BankData.getUserData(userId!!)
+        if (userData == null) {
+            // Manejar el caso en que el usuario ya no exista
+            finish()
+            return
+        }
+
+        // Formato: [0: password, 1: fullName, 2: balance, 3: email, 4: phone, 5: city]
+        txtUser3.text = userData[1]
+        txtCelular.text = userData[4]
+        txtCorreo.text = userData[3]
+        txtIdentificacion.text = userId
+        txtCiudad.text = userData[5]
     }
 
     private fun setupClickListeners() {
@@ -66,7 +79,10 @@ class Datos : AppCompatActivity() {
         }
 
         btnActualizar.setOnClickListener {
-            startActivity(Intent(this, Actualizar::class.java))
+            val intent = Intent(this, Actualizar::class.java).apply {
+                putExtra("identificacion", txtIdentificacion.text.toString())
+            }
+            startActivity(intent)
         }
     }
 }

@@ -109,7 +109,7 @@ class Menuprin : AppCompatActivity() {
         }
 
         btnTransferirLlaves.setOnClickListener {
-            showCustomDialog()
+            startActivity(Intent(this, TransferenciaLlave::class.java))
         }
 
         btnCertificados.setOnClickListener {

@@ -22,10 +22,10 @@ class Tranferencia : AppCompatActivity() {
         setContentView(R.layout.activity_tranferencia)
 
         // Inicialización de vistas
-        txtBackTrans = findViewById(R.id.txtBackTrans)
+        txtBackTrans = findViewById(R.id.txtBackTransLlave)
         txtNumeroCuenta = findViewById(R.id.txtNumerodeCuenta)
         txtMonto = findViewById(R.id.txtValor)
-        btnTransferir = findViewById(R.id.btnTrans)
+        btnTransferir = findViewById(R.id.btnTransLlave)
         sharedPreferences = getSharedPreferences("user_session", MODE_PRIVATE)
 
         // Listeners
@@ -75,6 +75,12 @@ class Tranferencia : AppCompatActivity() {
             mostrarMensaje("Transferencia exitosa!")
             txtMonto.text.clear()
             txtNumeroCuenta.text.clear()
+
+            // Redirigir al historial
+            val intent = android.content.Intent(this, Historial::class.java)
+            intent.flags = android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP or android.content.Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
+            finish()
         } else {
             mostrarMensaje("Error: $message")
         }
