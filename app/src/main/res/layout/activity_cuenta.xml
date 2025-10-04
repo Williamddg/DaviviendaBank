@@ -2,8 +2,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/blanco">
 
     <!-- Fondo gris lateral -->
     <ImageView
@@ -92,6 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="40dp"
+        android:textColor="@color/negro"
         android:text="USUARIO"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -99,7 +102,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/txtMisDatos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -114,13 +117,13 @@
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="@color/grismedio"
-        app:layout_constraintStart_toStartOf="@id/textView26"
+        app:layout_constraintStart_toStartOf="@id/txtMisDatos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView26"
+        app:layout_constraintTop_toBottomOf="@id/txtMisDatos"
         android:layout_marginTop="8dp"/>
 
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/txtMisDavipuntos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -135,13 +138,13 @@
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="@color/grismedio"
-        app:layout_constraintStart_toStartOf="@id/textView26"
+        app:layout_constraintStart_toStartOf="@id/txtMisDatos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView27"
+        app:layout_constraintTop_toBottomOf="@id/txtMisDavipuntos"
         android:layout_marginTop="8dp"/>
 
     <TextView
-        android:id="@+id/textView28"
+        android:id="@+id/txtAjustesSeguridad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -156,13 +159,13 @@
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="@color/grismedio"
-        app:layout_constraintStart_toStartOf="@id/textView26"
+        app:layout_constraintStart_toStartOf="@id/txtMisDatos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView28"
+        app:layout_constraintTop_toBottomOf="@id/txtAjustesSeguridad"
         android:layout_marginTop="8dp"/>
 
     <TextView
-        android:id="@+id/textView29"
+        android:id="@+id/txtAyudaServicio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -173,7 +176,7 @@
         app:layout_constraintTop_toBottomOf="@+id/lineaHorizontal3" />
 
     <TextView
-        android:id="@+id/textView30"
+        android:id="@+id/txtCerrarSesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="199dp"

@@ -43,7 +43,7 @@
 
     <!-- ===== Item 1 ===== -->
     <TextView
-        android:id="@+id/textItem1"
+        android:id="@+id/txtViajes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -64,11 +64,11 @@
         android:background="@color/grishint2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textItem1"/>
+        app:layout_constraintTop_toBottomOf="@id/txtViajes"/>
 
     <!-- ===== Item 2 ===== -->
     <TextView
-        android:id="@+id/textItem2"
+        android:id="@+id/txtLimites"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -89,11 +89,11 @@
         android:background="@color/grishint2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textItem2"/>
+        app:layout_constraintTop_toBottomOf="@id/txtLimites"/>
 
     <!-- ===== Item 3 ===== -->
     <TextView
-        android:id="@+id/textItem3"
+        android:id="@+id/txtCambiarClave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -114,11 +114,11 @@
         android:background="@color/grishint2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textItem3"/>
+        app:layout_constraintTop_toBottomOf="@id/txtCambiarClave"/>
 
     <!-- ===== Item 4 (último, sin línea) ===== -->
     <TextView
-        android:id="@+id/textItem4"
+        android:id="@+id/txtLimitesPSE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"

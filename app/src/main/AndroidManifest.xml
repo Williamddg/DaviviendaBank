@@ -54,9 +54,6 @@
             android:name=".Retiros"
             android:exported="false" />
         <activity
-            android:name=".Perfil"
-            android:exported="false" />
-        <activity
             android:name=".RegistroExitoso"
             android:exported="false" />
         <activity

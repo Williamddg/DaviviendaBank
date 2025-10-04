@@ -43,7 +43,7 @@
 
     <!-- ===== Item 1 ===== -->
     <TextView
-        android:id="@+id/textItem1"
+        android:id="@+id/txtLlamar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -64,11 +64,11 @@
         android:background="@color/grishint2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textItem1"/>
+        app:layout_constraintTop_toBottomOf="@id/txtLlamar"/>
 
     <!-- ===== Item 2 ===== -->
     <TextView
-        android:id="@+id/textItem2"
+        android:id="@+id/txtChatSoporte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -89,11 +89,11 @@
         android:background="@color/grishint2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textItem2"/>
+        app:layout_constraintTop_toBottomOf="@id/txtChatSoporte"/>
 
     <!-- ===== Item 3 (último, sin línea) ===== -->
     <TextView
-        android:id="@+id/textItem3"
+        android:id="@+id/txtMasReclamaciones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"

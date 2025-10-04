@@ -1,9 +1,11 @@
 package com.example.daviviendabank
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -12,14 +14,21 @@ import androidx.core.view.WindowInsetsCompat
 
 class Cuenta : AppCompatActivity() {
 
-    private lateinit var txtUser2: EditText
+    private lateinit var txtUser2: TextView
     private lateinit var sharedPreferences: SharedPreferences
 
-    private var fullName: String = ""
-    private var email: String = ""
-    private var city: String = ""
-    private var idUser: String = ""
-    private var phone: String = ""
+    private lateinit var txtCerrarSesion: TextView
+    private lateinit var txtMisDatos: TextView
+    private lateinit var txtMisDavipuntos: TextView
+    private lateinit var txtAjustesSeguridad: TextView
+    private lateinit var txtAyudaServicio: TextView
+    private lateinit var imgPersonal: ImageView
+
+    private var nombre: String? = null
+    private var celular: String? = null
+    private var correo: String? = null
+    private var identificacion: String? = null
+    private var ciudad: String? = null
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,46 +36,81 @@ class Cuenta : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_cuenta)
 
-        // Ajuste de paddings por sistema
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        // Inicializar vistas
-        txtUser2 = findViewById(R.id.txtUser2)
+        initViews()
 
-        // Inicializar SharedPreferences
         sharedPreferences = getSharedPreferences("user_session", MODE_PRIVATE)
 
-        // Obtener username guardado en sesión
         val username = sharedPreferences.getString("username", null) ?: run {
             showToast("Sesión expirada")
-            finish()
+            redirectToMain()
             return
         }
 
-        // Cargar datos del usuario
-        obtenerDatosUsuario(username)
+        loadUserData(username)
+        setupClickListeners()
     }
 
-    private fun obtenerDatosUsuario(username: String) {
+    private fun initViews() {
+        txtUser2 = findViewById(R.id.txtUser2)
+        txtCerrarSesion = findViewById(R.id.txtCerrarSesion)
+        txtMisDatos = findViewById(R.id.txtMisDatos)
+        txtMisDavipuntos = findViewById(R.id.txtMisDavipuntos)
+        txtAjustesSeguridad = findViewById(R.id.txtAjustesSeguridad)
+        txtAyudaServicio = findViewById(R.id.txtAyudaServicio)
+        imgPersonal = findViewById(R.id.imgPersonal)
+    }
+
+    private fun loadUserData(username: String) {
         val userData = BankData.getUserData(username)
-
         if (userData != null) {
-            // userData: [0: password, 1: fullName, 2: balance, 3: email, 4: phone, 5: city]
-            fullName = userData[1]
-            email = userData[3]
-            city = userData[5]
-            idUser = username
-            phone = userData[4]
+            nombre = userData[1]
+            celular = userData[4]
+            correo = userData[3]
+            identificacion = username
+            ciudad = userData[5]
 
-            // 👇 Por ahora solo mostramos el nombre
-            txtUser2.setText(fullName)
+            txtUser2.text = nombre
         } else {
             showToast("Error al obtener datos del usuario")
         }
+    }
+
+    private fun setupClickListeners() {
+        txtCerrarSesion.setOnClickListener { cerrarSesion() }
+        txtMisDatos.setOnClickListener {
+            val intent = Intent(this, Datos::class.java).apply {
+                putExtra("nombre", nombre)
+                putExtra("celular", celular)
+                putExtra("correo", correo)
+                putExtra("identificacion", identificacion)
+                putExtra("ciudad", ciudad)
+            }
+            startActivity(intent)
+        }
+        txtMisDavipuntos.setOnClickListener { startActivity(Intent(this, Davipuntos::class.java)) }
+        txtAjustesSeguridad.setOnClickListener { startActivity(Intent(this, Ajustes_seguridad::class.java)) }
+        txtAyudaServicio.setOnClickListener { startActivity(Intent(this, Ayuda_servicio::class.java)) }
+        imgPersonal.setOnClickListener { recreate() }
+    }
+
+    private fun cerrarSesion() {
+        val editor = sharedPreferences.edit()
+        editor.clear()
+        editor.apply()
+        redirectToMain()
+    }
+
+    private fun redirectToMain() {
+        val intent = Intent(this, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
     }
 
     private fun showToast(message: String) {
